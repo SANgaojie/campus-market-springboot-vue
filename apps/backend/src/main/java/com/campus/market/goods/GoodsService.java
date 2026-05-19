@@ -6,6 +6,7 @@ import com.campus.market.common.BusinessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -99,12 +100,27 @@ public class GoodsService {
         return toResponse(goods);
     }
 
-    public List<GoodsResponse> listOnSale(Long categoryId) {
+    public List<GoodsResponse> listOnSale(Long categoryId, String keyword, BigDecimal minPrice, BigDecimal maxPrice, Integer minCondition) {
         var query = new LambdaQueryWrapper<Goods>()
                 .eq(Goods::getStatus, GoodsStatus.ON_SALE.name())
                 .orderByDesc(Goods::getCreatedAt);
         if (categoryId != null) {
             query.eq(Goods::getCategoryId, categoryId);
+        }
+        if (keyword != null && !keyword.trim().isBlank()) {
+            var normalizedKeyword = keyword.trim();
+            query.and(wrapper -> wrapper.like(Goods::getTitle, normalizedKeyword)
+                    .or()
+                    .like(Goods::getDescription, normalizedKeyword));
+        }
+        if (minPrice != null) {
+            query.ge(Goods::getPrice, minPrice);
+        }
+        if (maxPrice != null) {
+            query.le(Goods::getPrice, maxPrice);
+        }
+        if (minCondition != null) {
+            query.ge(Goods::getConditionLevel, minCondition);
         }
         return goodsMapper.selectList(query).stream()
                 .map(this::toResponse)

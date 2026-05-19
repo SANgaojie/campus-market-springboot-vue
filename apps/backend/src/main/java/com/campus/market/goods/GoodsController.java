@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -38,8 +39,12 @@ public class GoodsController {
     }
 
     @GetMapping
-    public ApiResponse<List<GoodsResponse>> list(@RequestParam(required = false) Long categoryId) {
-        return ApiResponse.ok(goodsService.listOnSale(categoryId));
+    public ApiResponse<List<GoodsResponse>> list(@RequestParam(required = false) Long categoryId,
+                                                @RequestParam(required = false) String keyword,
+                                                @RequestParam(required = false) BigDecimal minPrice,
+                                                @RequestParam(required = false) BigDecimal maxPrice,
+                                                @RequestParam(required = false) Integer minCondition) {
+        return ApiResponse.ok(goodsService.listOnSale(categoryId, keyword, minPrice, maxPrice, minCondition));
     }
 
     @GetMapping("/{goodsId}")

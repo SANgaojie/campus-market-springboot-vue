@@ -13,6 +13,10 @@ import { goodsPlaceholder } from '@/utils/display'
 const categories = ref<Category[]>([])
 const goods = ref<Goods[]>([])
 const categoryId = ref<number | ''>('')
+const keyword = ref('')
+const minPrice = ref<number | ''>('')
+const maxPrice = ref<number | ''>('')
+const minCondition = ref<number | ''>('')
 const loading = ref(false)
 const error = ref('')
 const pageSize = 24
@@ -26,7 +30,13 @@ async function loadGoods() {
   error.value = ''
   try {
     visibleCount.value = pageSize
-    goods.value = await fetchGoods(categoryId.value === '' ? undefined : categoryId.value)
+    goods.value = await fetchGoods({
+      categoryId: categoryId.value === '' ? undefined : categoryId.value,
+      keyword: keyword.value.trim() || undefined,
+      minPrice: minPrice.value === '' ? undefined : minPrice.value,
+      maxPrice: maxPrice.value === '' ? undefined : maxPrice.value,
+      minCondition: minCondition.value === '' ? undefined : minCondition.value,
+    })
   } catch (err) {
     error.value = err instanceof Error ? err.message : '加载商品失败'
   } finally {
@@ -47,19 +57,42 @@ onMounted(async () => {
 <template>
   <section>
     <h1 class="page-title">发现校园好物</h1>
-    <p class="muted">先做最小可用版：商品列表、详情、下单链路已经和后端打通。</p>
+    <p class="muted">按关键词、分类、价格和成色快速筛选，找到合适的校园闲置。</p>
 
-    <div class="card" style="margin: 24px 0">
+    <form class="card search-panel" @submit.prevent="loadGoods">
+      <label>
+        关键词
+        <input v-model="keyword" placeholder="搜索商品标题或描述" />
+      </label>
       <label>
         商品分类
-        <select v-model="categoryId" @change="loadGoods">
+        <select v-model.number="categoryId">
           <option value="">全部分类</option>
           <option v-for="category in categories" :key="category.id" :value="category.id">
             {{ category.name }}
           </option>
         </select>
       </label>
-    </div>
+      <label>
+        最低价格
+        <input v-model.number="minPrice" type="number" min="0" placeholder="不限" />
+      </label>
+      <label>
+        最高价格
+        <input v-model.number="maxPrice" type="number" min="0" placeholder="不限" />
+      </label>
+      <label>
+        最低成色
+        <select v-model.number="minCondition">
+          <option value="">不限</option>
+          <option v-for="level in [5, 4, 3, 2, 1]" :key="level" :value="level">{{ level }} 成新以上</option>
+        </select>
+      </label>
+      <div class="search-actions">
+        <button class="primary" type="submit">搜索商品</button>
+        <button class="secondary" type="button" @click="keyword = ''; categoryId = ''; minPrice = ''; maxPrice = ''; minCondition = ''; loadGoods()">重置</button>
+      </div>
+    </form>
 
     <p v-if="loading" class="muted">加载中...</p>
     <p v-if="error" class="error">{{ error }}</p>

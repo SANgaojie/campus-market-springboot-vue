@@ -20,8 +20,16 @@ export function fetchCategories() {
   return request<Category[]>(http.get('/categories'))
 }
 
-export function fetchGoods(categoryId?: number) {
-  return request<Goods[]>(http.get('/goods', { params: { categoryId } }))
+export interface GoodsSearchParams {
+  categoryId?: number
+  keyword?: string
+  minPrice?: number
+  maxPrice?: number
+  minCondition?: number
+}
+
+export function fetchGoods(params: GoodsSearchParams = {}) {
+  return request<Goods[]>(http.get('/goods', { params }))
 }
 
 export function fetchGoodsDetail(goodsId: number) {

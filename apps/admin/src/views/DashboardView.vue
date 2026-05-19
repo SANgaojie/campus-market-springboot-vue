@@ -13,6 +13,37 @@ const loading = ref(true)
 const error = ref('')
 const summary = ref<AdminDashboardSummary | null>(null)
 
+const goodsChart = computed(() => {
+  if (!summary.value) return []
+  const goodsOtherCount = Math.max(
+    summary.value.goodsCount - summary.value.onSaleGoodsCount - summary.value.lockedGoodsCount - summary.value.soldGoodsCount,
+    0,
+  )
+  return [
+    { label: '在售', value: summary.value.onSaleGoodsCount, color: '#2563eb' },
+    { label: '交易中', value: summary.value.lockedGoodsCount, color: '#f59e0b' },
+    { label: '已售', value: summary.value.soldGoodsCount, color: '#16a34a' },
+    { label: '其他', value: goodsOtherCount, color: '#94a3b8' },
+  ]
+})
+
+const orderChart = computed(() => {
+  if (!summary.value) return []
+  return [
+    { label: '待支付', value: summary.value.pendingPaymentOrderCount, color: '#f97316' },
+    { label: '已支付', value: summary.value.paidOrderCount, color: '#2563eb' },
+    { label: '已完成', value: summary.value.completedOrderCount, color: '#16a34a' },
+    { label: '退款中', value: summary.value.refundingOrderCount, color: '#dc2626' },
+    { label: '已退款', value: summary.value.refundedOrderCount, color: '#7c3aed' },
+  ]
+})
+
+const maxChartValue = computed(() => Math.max(
+  ...goodsChart.value.map((item) => item.value),
+  ...orderChart.value.map((item) => item.value),
+  1,
+))
+
 const cards = computed(() => {
   if (!summary.value) return []
   const goodsOtherCount = Math.max(
@@ -58,6 +89,42 @@ onMounted(async () => {
         <span class="muted">{{ card.label }}</span>
         <strong>{{ card.value }}</strong>
         <span class="muted">{{ card.hint }}</span>
+      </article>
+    </div>
+
+    <div class="dashboard-panels">
+      <article class="card panel">
+        <h2>商品状态分布</h2>
+        <div class="chart-list">
+          <div v-for="item in goodsChart" :key="item.label" class="chart-row">
+            <span>{{ item.label }}</span>
+            <div class="chart-track">
+              <i :style="{ width: `${(item.value / maxChartValue) * 100}%`, background: item.color }"></i>
+            </div>
+            <strong>{{ item.value }}</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="card panel">
+        <h2>订单状态流转</h2>
+        <div class="flow-steps">
+          <span>待支付</span>
+          <b>→</b>
+          <span>已支付</span>
+          <b>→</b>
+          <span>已完成</span>
+          <em>退款：已支付 → 退款中 → 已退款</em>
+        </div>
+        <div class="chart-list">
+          <div v-for="item in orderChart" :key="item.label" class="chart-row">
+            <span>{{ item.label }}</span>
+            <div class="chart-track">
+              <i :style="{ width: `${(item.value / maxChartValue) * 100}%`, background: item.color }"></i>
+            </div>
+            <strong>{{ item.value }}</strong>
+          </div>
+        </div>
       </article>
     </div>
 
