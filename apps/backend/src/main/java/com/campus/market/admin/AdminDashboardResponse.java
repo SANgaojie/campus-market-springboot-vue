@@ -1,5 +1,11 @@
 package com.campus.market.admin;
 
+/**
+ * AdminDashboardResponse 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/13
+ */
 public record AdminDashboardResponse(
         Long userCount,
         Long enabledUserCount,

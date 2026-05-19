@@ -1,3 +1,9 @@
+/**
+ * env.d 模块
+ *
+ * @author 阿德
+ * @date 2026/05/10
+ */
 declare module '*.css'
 
 declare module '*.vue' {

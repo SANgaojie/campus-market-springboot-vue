@@ -4,8 +4,9 @@ package com.campus.market.common;
  * Unified API response.
  *
  * Java 17 record keeps DTO code concise and immutable.
- */
-public record ApiResponse<T>(int code, String message, T data) {
+ * @author 阿德
+ * @date 2026/05/06
+ */public record ApiResponse<T>(int code, String message, T data) {
 
     public static <T> ApiResponse<T> ok(T data) {
         return new ApiResponse<>(200, "ok", data);

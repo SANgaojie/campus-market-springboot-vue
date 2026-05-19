@@ -8,6 +8,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * GoodsService 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/07
+ */
 @Service
 public class GoodsService {
 

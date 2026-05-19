@@ -36,7 +36,7 @@
 
 ## 建议删除/弱化的模块
 
-这些模块和“Java 后端求职项目：校园二手交易平台”主线关系弱，后续可删除：
+这些模块和“校园二手交易平台”主线关系弱，后续可删除：
 
 - 校园论坛：`PostController`、`Post*Dto`、`PostMapper*`
 - 表白墙：`WallController`、`Wall*Dto`、`WallMapper*`

@@ -8,6 +8,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.nio.file.Path;
 
+/**
+ * WebMvcConfig 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/15
+ */
 @Configuration
 @EnableConfigurationProperties(FileStorageProperties.class)
 public class WebMvcConfig implements WebMvcConfigurer {

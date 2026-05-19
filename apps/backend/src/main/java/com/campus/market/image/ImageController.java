@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+/**
+ * ImageController 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/07
+ */
 @RestController
 @RequestMapping("/api/images")
 public class ImageController {

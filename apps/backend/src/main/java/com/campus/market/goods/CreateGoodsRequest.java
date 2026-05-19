@@ -10,6 +10,12 @@ import jakarta.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * CreateGoodsRequest 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/06
+ */
 public record CreateGoodsRequest(
         @NotNull Long categoryId,
         @NotBlank @Size(max = 100) String title,

@@ -1,3 +1,9 @@
+/**
+ * vite.config 模块
+ *
+ * @author 阿德
+ * @date 2026/05/19
+ */
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'

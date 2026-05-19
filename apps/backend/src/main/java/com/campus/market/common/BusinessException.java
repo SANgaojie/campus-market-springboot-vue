@@ -1,5 +1,11 @@
 package com.campus.market.common;
 
+/**
+ * BusinessException 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/17
+ */
 public class BusinessException extends RuntimeException {
 
     private final int code;

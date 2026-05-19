@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.Optional;
 
+/**
+ * GlobalExceptionHandler 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/09
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

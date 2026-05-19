@@ -1,3 +1,9 @@
+<!--
+  RegisterView 模块
+
+  @author 阿德
+  @date 2026/05/11
+-->
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'

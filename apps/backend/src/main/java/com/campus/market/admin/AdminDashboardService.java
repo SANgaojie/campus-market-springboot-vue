@@ -15,6 +15,12 @@ import com.campus.market.user.User;
 import com.campus.market.user.UserMapper;
 import org.springframework.stereotype.Service;
 
+/**
+ * AdminDashboardService 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/09
+ */
 @Service
 public class AdminDashboardService {
 

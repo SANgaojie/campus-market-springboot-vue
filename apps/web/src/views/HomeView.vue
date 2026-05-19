@@ -1,3 +1,9 @@
+<!--
+  HomeView 模块
+
+  @author 阿德
+  @date 2026/05/09
+-->
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { fetchCategories, fetchGoods } from '@/api/goods'

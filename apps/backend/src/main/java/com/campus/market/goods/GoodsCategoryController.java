@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * GoodsCategoryController 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/09
+ */
 @RestController
 @RequestMapping("/api/categories")
 public class GoodsCategoryController {

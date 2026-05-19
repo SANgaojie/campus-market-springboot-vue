@@ -6,6 +6,12 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.time.LocalDateTime;
 
+/**
+ * UserRole 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/06
+ */
 @TableName("user_role")
 public class UserRole {
 

@@ -1,3 +1,9 @@
+/**
+ * 业务类型定义
+ *
+ * @author 阿德
+ * @date 2026/05/06
+ */
 export interface ApiResponse<T> {
   code: number
   message: string

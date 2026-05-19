@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# start-web 模块
+#
+# @author 阿德
+# @date 2026/05/15
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"

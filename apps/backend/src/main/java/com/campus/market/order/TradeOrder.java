@@ -7,6 +7,12 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * TradeOrder 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/07
+ */
 @TableName("trade_order")
 public class TradeOrder {
 

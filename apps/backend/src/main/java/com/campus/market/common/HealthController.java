@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.Instant;
 import java.util.Map;
 
+/**
+ * HealthController 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/18
+ */
 @RestController
 @RequestMapping("/api/health")
 public class HealthController {

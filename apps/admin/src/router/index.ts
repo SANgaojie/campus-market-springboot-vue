@@ -1,3 +1,9 @@
+/**
+ * 路由与模块入口
+ *
+ * @author 阿德
+ * @date 2026/05/12
+ */
 import { createRouter, createWebHistory } from 'vue-router'
 import { adminSession } from '@/api/session'
 import DashboardView from '@/views/DashboardView.vue'

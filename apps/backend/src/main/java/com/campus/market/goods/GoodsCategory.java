@@ -6,6 +6,12 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.time.LocalDateTime;
 
+/**
+ * GoodsCategory 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/15
+ */
 @TableName("goods_category")
 public class GoodsCategory {
 

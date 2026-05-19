@@ -1,3 +1,9 @@
+/**
+ * 认证接口封装
+ *
+ * @author 阿德
+ * @date 2026/05/18
+ */
 import { http, request } from '@/api/http'
 import type { AuthResponse, UserProfile } from '@/api/types'
 

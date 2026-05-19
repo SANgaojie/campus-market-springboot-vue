@@ -1,3 +1,9 @@
+<!--
+  CategoryManageView 模块
+
+  @author 阿德
+  @date 2026/05/08
+-->
 <script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue'
 import {

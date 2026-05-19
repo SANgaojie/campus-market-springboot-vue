@@ -1,3 +1,9 @@
+/**
+ * 会话状态管理
+ *
+ * @author 阿德
+ * @date 2026/05/15
+ */
 import { reactive } from 'vue'
 import type { UserProfile } from '@/api/types'
 

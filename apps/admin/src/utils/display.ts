@@ -1,3 +1,9 @@
+/**
+ * 页面展示格式化工具
+ *
+ * @author 阿德
+ * @date 2026/05/14
+ */
 import type { Goods, OrderStatus } from '@/api/types'
 
 const goodsStatusLabels: Record<Goods['status'], string> = {

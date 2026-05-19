@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * AuthController 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/10
+ */
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {

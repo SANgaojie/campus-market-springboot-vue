@@ -1,3 +1,9 @@
+/**
+ * HTTP 请求封装
+ *
+ * @author 阿德
+ * @date 2026/05/08
+ */
 import axios from 'axios'
 import { useAuthStore } from '@/stores/auth'
 import type { ApiResponse } from '@/api/types'

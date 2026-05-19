@@ -1,3 +1,9 @@
+/**
+ * 页面展示格式化工具
+ *
+ * @author 阿德
+ * @date 2026/05/09
+ */
 import type { GoodsStatus, OrderStatus } from '@/api/types'
 
 export const goodsPlaceholder =

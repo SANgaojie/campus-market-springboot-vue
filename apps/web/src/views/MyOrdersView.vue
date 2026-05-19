@@ -1,3 +1,9 @@
+<!--
+  MyOrdersView 模块
+
+  @author 阿德
+  @date 2026/05/07
+-->
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { cancelOrder, completeOrder, fetchBoughtOrders, fetchSoldOrders, payOrder, requestRefund } from '@/api/orders'

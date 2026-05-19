@@ -14,6 +14,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * FileStorageService 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/10
+ */
 @Service
 public class FileStorageService {
 

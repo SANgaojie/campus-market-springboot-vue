@@ -1,3 +1,9 @@
+/**
+ * 管理后台接口封装
+ *
+ * @author 阿德
+ * @date 2026/05/09
+ */
 import { http, request } from '@/api/http'
 import type { Category, Goods, GoodsComment, OrderStatus, TradeOrder, UserProfile } from '@/api/types'
 

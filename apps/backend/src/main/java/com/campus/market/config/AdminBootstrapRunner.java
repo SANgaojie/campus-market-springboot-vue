@@ -5,6 +5,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+/**
+ * AdminBootstrapRunner 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/16
+ */
 @Component
 @EnableConfigurationProperties(AdminBootstrapProperties.class)
 public class AdminBootstrapRunner implements CommandLineRunner {

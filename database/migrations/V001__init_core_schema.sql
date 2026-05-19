@@ -1,3 +1,7 @@
+-- V001__init_core_schema 模块
+--
+-- @author 阿德
+-- @date 2026/05/13
 CREATE TABLE sys_user (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL,

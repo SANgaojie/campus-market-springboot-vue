@@ -1,3 +1,9 @@
+/**
+ * 路由与模块入口
+ *
+ * @author 阿德
+ * @date 2026/05/13
+ */
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 import HomeView from '@/views/HomeView.vue'

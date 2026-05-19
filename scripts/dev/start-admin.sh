@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# start-admin 模块
+#
+# @author 阿德
+# @date 2026/05/17
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"

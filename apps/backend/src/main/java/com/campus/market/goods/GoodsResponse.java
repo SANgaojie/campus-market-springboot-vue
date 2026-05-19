@@ -4,6 +4,12 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * GoodsResponse 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/13
+ */
 public record GoodsResponse(
         Long id,
         Long sellerId,

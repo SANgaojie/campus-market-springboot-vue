@@ -1,3 +1,9 @@
+/**
+ * 上传接口封装
+ *
+ * @author 阿德
+ * @date 2026/05/16
+ */
 import { http, request } from '@/api/http'
 
 export interface UploadResponse {

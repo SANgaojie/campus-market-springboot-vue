@@ -1,3 +1,9 @@
+/**
+ * 认证接口封装
+ *
+ * @author 阿德
+ * @date 2026/05/19
+ */
 import { defineStore } from 'pinia'
 import type { UserProfile } from '@/api/types'
 

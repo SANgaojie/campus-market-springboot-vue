@@ -1,3 +1,9 @@
+/**
+ * 应用启动入口
+ *
+ * @author 阿德
+ * @date 2026/05/09
+ */
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import router from '@/router'

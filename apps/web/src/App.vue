@@ -1,3 +1,9 @@
+<!--
+  应用入口组件
+
+  @author 阿德
+  @date 2026/05/09
+-->
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'

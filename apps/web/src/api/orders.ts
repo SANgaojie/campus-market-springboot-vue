@@ -1,3 +1,9 @@
+/**
+ * 订单接口封装
+ *
+ * @author 阿德
+ * @date 2026/05/17
+ */
 import { http, request } from '@/api/http'
 import type { TradeOrder } from '@/api/types'
 

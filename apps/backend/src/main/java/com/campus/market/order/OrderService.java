@@ -13,6 +13,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * OrderService 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/10
+ */
 @Service
 public class OrderService {
 

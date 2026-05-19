@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# reset-demo-data 模块
+#
+# @author 阿德
+# @date 2026/05/06
 set -euo pipefail
 
 DB_NAME="${DB_NAME:-campus_market}"

@@ -1,3 +1,9 @@
+<!--
+  ProfileView 模块
+
+  @author 阿德
+  @date 2026/05/15
+-->
 <script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue'
 import { changePassword, fetchMe, updateProfile } from '@/api/auth'

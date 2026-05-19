@@ -5,6 +5,12 @@ import com.campus.market.config.JwtTokenService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+/**
+ * AuthService 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/06
+ */
 @Service
 public class AuthService {
 

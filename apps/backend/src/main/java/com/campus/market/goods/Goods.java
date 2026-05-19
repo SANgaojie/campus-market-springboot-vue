@@ -7,6 +7,12 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Goods 业务组件。
+ *
+ * @author 阿德
+ * @date 2026/05/08
+ */
 @TableName("goods")
 public class Goods {
 

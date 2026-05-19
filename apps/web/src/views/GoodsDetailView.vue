@@ -1,3 +1,9 @@
+<!--
+  GoodsDetailView 模块
+
+  @author 阿德
+  @date 2026/05/14
+-->
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'

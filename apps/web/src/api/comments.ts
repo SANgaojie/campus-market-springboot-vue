@@ -1,3 +1,9 @@
+/**
+ * comments 模块
+ *
+ * @author 阿德
+ * @date 2026/05/16
+ */
 import { http, request } from '@/api/http'
 import type { GoodsComment } from '@/api/types'
 

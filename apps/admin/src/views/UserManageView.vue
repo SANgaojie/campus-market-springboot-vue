@@ -1,3 +1,9 @@
+<!--
+  UserManageView 模块
+
+  @author 阿德
+  @date 2026/05/17
+-->
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { disableUser, enableUser, fetchAdminUsers } from '@/api/admin'
